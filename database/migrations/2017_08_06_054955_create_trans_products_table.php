@@ -15,10 +15,18 @@ class CreateTransProductsTable extends Migration
     {
         Schema::create('trans_products', function (Blueprint $table) {
             $table->increments('id_trans_product');
-            $table->integer('id_trans');
-            $table->integer('id_product');
+            $table->integer('id_trans')->unsigned();
+            $table->string('id_product');
             $table->integer('jumlah');
             $table->timestamps();
+            $table->foreign('id_trans')
+                  ->references('id_transaction')
+                  ->on('transactions')
+                  ->onDelete('CASCADE');
+            $table->foreign('id_product')
+                  ->references('id_product')
+                  ->on('products')
+                  ->onDelete('CASCADE');
         });
     }
 

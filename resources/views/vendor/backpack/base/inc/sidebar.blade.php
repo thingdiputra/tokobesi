@@ -20,6 +20,11 @@
           <!-- ==== Recommended place for admin menu items ==== -->
           <!-- ================================================ -->
           <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/dashboard') }}"><i class="fa fa-dashboard"></i> <span>{{ trans('backpack::base.dashboard') }}</span></a></li>
+          <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/customer') }}"><i class="fa fa-user"></i> <span>Customer</span></a></li>
+          <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/product') }}"><i class="fa fa-shopping-bag"></i> <span>Product</span></a></li>
+          <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/transaction') }}"><i class="fa fa-shopping-cart"></i> <span>Transaction</span></a></li>
+          <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/discount') }}"><i class="fa fa-money"></i> <span>Discount</span></a></li>
+
 
 
           <!-- ======================================= -->

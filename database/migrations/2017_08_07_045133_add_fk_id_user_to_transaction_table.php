@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddAttributesToUsers extends Migration
+class AddFkIdUserToTransactionTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,11 @@ class AddAttributesToUsers extends Migration
      */
     public function up()
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->string('telp')->nullable();
-            $table->string('alamat')->nullable();
-            $table->integer('level')->default(1);
+        Schema::table('transactions', function (Blueprint $table) {
+            $table->foreign('id_user')
+                  ->references('id')
+                  ->on('users')
+                  ->onDelete('CASCADE');
         });
     }
 
